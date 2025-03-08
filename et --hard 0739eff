@@ -1,0 +1,52 @@
+[33m4dd16ac[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m HEAD@{0}: commit (amend): Merge branch 'main' of https://github.com/phonkiatrobkob05/lendly
+[33m7696bd3[m HEAD@{1}: pull origin main: Merge made by the 'ort' strategy.
+[33m9dd85c6[m HEAD@{2}: pull origin main: Merge made by the 'ort' strategy.
+[33m0739eff[m HEAD@{3}: commit: add
+[33m3907d61[m HEAD@{4}: pull origin main: Fast-forward
+[33m045cf7d[m HEAD@{5}: commit: test
+[33m670d842[m HEAD@{6}: commit: add id fullname faculty
+[33ma3a133f[m HEAD@{7}: commit: change css
+[33mc5432ff[m HEAD@{8}: checkout: moving from 806108fbb27258b965b4ef8f575f5a915e25bf24 to main
+[33m806108f[m HEAD@{9}: commit: change css
+[33mc5432ff[m HEAD@{10}: checkout: moving from main to c5432ff398bbea079385e98ebd43a36f100faa73
+[33mc5432ff[m HEAD@{11}: commit: mo user
+[33m9bef356[m HEAD@{12}: pull origin main: Fast-forward
+[33m3e87577[m HEAD@{13}: commit: protect user no error
+[33mb7ebb2a[m HEAD@{14}: commit: edit protect no login
+[33mdc58873[m HEAD@{15}: commit: protect path
+[33m0997eb9[m HEAD@{16}: commit (amend): Merge branch 'main' of https://github.com/phonkiatrobkob05/lendly
+[33mbd20c71[m HEAD@{17}: pull origin main: Merge made by the 'ort' strategy.
+[33m73b8e76[m HEAD@{18}: commit (amend): finish login
+[33mc27c27a[m HEAD@{19}: commit: finish login
+[33me2e4554[m HEAD@{20}: commit: lated
+[33m7e0f401[m HEAD@{21}: commit (merge): Merge branch 'main' of https://github.com/phonkiatrobkob05/lendly
+[33m0b8c78c[m HEAD@{22}: commit (merge): Merge branch 'main' of https://github.com/phonkiatrobkob05/lendly
+[33me232e43[m HEAD@{23}: commit (amend): Merge branch 'main' of https://github.com/phonkiatrobkob05/lendly
+[33m0c1d83f[m HEAD@{24}: pull origin main: updating HEAD
+[33m0c1d83f[m HEAD@{25}: pull origin main: updating HEAD
+[33m0c1d83f[m HEAD@{26}: pull origin main: Merge made by the 'ort' strategy.
+[33md6bc21f[m HEAD@{27}: commit (amend): helppageNAJA
+[33me6c9f44[m HEAD@{28}: pull origin main: Fast-forward
+[33m1310390[m HEAD@{29}: commit: fix register
+[33m177de62[m HEAD@{30}: pull origin main: Merge made by the 'ort' strategy.
+[33m006442e[m HEAD@{31}: commit: fix register
+[33me73716c[m HEAD@{32}: checkout: moving from b5d26424fcd4253e31af6599c838a5668479f210 to main
+[33mb5d2642[m HEAD@{33}: commit: fix App.js
+[33mdab1617[m HEAD@{34}: pull origin main: Fast-forward
+[33m1ebf0ea[m HEAD@{35}: checkout: moving from 4e2187db913b8b182c565509662a908c3ef4bbfb to 1ebf0eac7bc964efb6be1cd6057d0f25d8180a3b
+[33m4e2187d[m HEAD@{36}: checkout: moving from main to 4e2187db913b8b182c565509662a908c3ef4bbfb
+[33me73716c[m HEAD@{37}: pull origin main: Merge made by the 'ort' strategy.
+[33m4e2187d[m HEAD@{38}: commit (merge): demo register
+[33m1ebf0ea[m HEAD@{39}: commit: demo register
+[33m37369f4[m HEAD@{40}: pull origin main: Fast-forward
+[33m1364a30[m[33m ([m[1;31morigin/old-version-branch[m[33m)[m HEAD@{41}: pull origin main: Fast-forward
+[33m7899730[m HEAD@{42}: pull origin main: Fast-forward
+[33m5ee118b[m HEAD@{43}: pull origin main: Fast-forward
+[33m9a8b140[m HEAD@{44}: pull origin main: Fast-forward
+[33mabf92c9[m HEAD@{45}: pull origin main: Fast-forward
+[33mc7c05da[m HEAD@{46}: checkout: moving from 9e4c39ba96133c42a54edfbed7f79f311ec492a3 to main
+[33m9e4c39b[m HEAD@{47}: commit: sds
+[33mf5bd46f[m HEAD@{48}: commit: main default
+[33m4edbe7b[m HEAD@{49}: pull origin main --rebase (start): checkout 4edbe7bbeb44d934b1e4e829c847e9a9cce4186c
+[33mc7c05da[m HEAD@{50}: Branch: renamed refs/heads/master to refs/heads/main
+[33mc7c05da[m HEAD@{52}: commit (initial): main default
