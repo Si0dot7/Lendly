@@ -8,7 +8,6 @@ RUN npm install
 
 COPY . .
 
-# สร้างไฟล์สำหรับ production
 RUN npm run build
 
 CMD ["npm", "run", "preview"]
