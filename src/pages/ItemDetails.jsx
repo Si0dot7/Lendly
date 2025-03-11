@@ -30,7 +30,7 @@ function ItemDetails() {
         <div className="flex flex-col gap-4 items-center">
           <img
             className="w-48 h-48 object-cover rounded-lg p-4"
-            src={file || "/defaultimage.png"} // Fallback image if no imageSrc
+            src={file || "/defaultimage.png"} 
             alt="Item Image"
           />
           <div className="flex flex-col gap-6 mb-4 justify-center items-center">
@@ -51,7 +51,7 @@ function ItemDetails() {
               </div>
 
               {/* Status Indicator */}
-              <p className="text-sm text-gray-500">{statusIndicator}</p>
+              {/* <p className="text-sm text-gray-500">{statusIndicator}</p> */}
 
               <p className="text-gray-700 mb-4">{description}</p>
               <p className="text-gray-700 mb-4">Location: {lenderName}</p>

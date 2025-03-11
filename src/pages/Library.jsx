@@ -10,7 +10,7 @@ function Library() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen p-4">
+    <div className="flex flex-col min-h-screen p-4 max-h-screen">
       <div className="flex-grow flex flex-col items-center">
         <div className="p-4">
           <h1 className="text-2xl font-[Inter] font-bold">Library</h1>

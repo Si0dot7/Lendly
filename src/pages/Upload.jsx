@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { useParams, useNavigate,Link } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import axios from "axios";
-import Swal from 'sweetalert2'
+import Swal from "sweetalert2";
 
 function Upload() {
   const authtoken = localStorage.getItem("token");
   const [image, setImage] = useState("");
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [data, setData] = useState([
     {
       title: "",
@@ -45,7 +45,8 @@ function Upload() {
       setData((prevData) => {
         const newData = { ...prevData, image: pushImage.data.imageUrl };
 
-        axios.post(import.meta.env.VITE_API_URI + "/product", newData, {
+        axios
+          .post(import.meta.env.VITE_API_URI + "/product", newData, {
             headers: { authtoken },
           })
           .then((res) => console.log("product data", res.data))
@@ -54,10 +55,10 @@ function Upload() {
       Swal.fire({
         title: "Successfully!!!",
         text: "Add Product Successfully",
-        icon: "success"
-      })
+        icon: "success",
+      });
       // await new Promise(resolve => setTimeout(resolve, 1000));
-      navigate('/home')
+      navigate("/home");
     } catch (error) {
       console.log("submit error", error);
     }
@@ -140,23 +141,14 @@ function Upload() {
               <option value="" disabled>
                 Select your mainLocation
               </option>
-              <option value="Architecture">Architecture, Art and Design</option>
-              <option value="AgriTech">Agricultural and Technology</option>
-              <option value="Business">Business</option>
-              <option value="Dentistry">Dentistry</option>
-              <option value="Engineering">Engineering</option>
-              <option value="FoodIndus">Food Industry</option>
-              <option value="InformTech">Information Technology</option>
-              <option value="IndusEdu">
-                Industrial Education and Technology
-              </option>
-              <option value="IntInnTech">
-                Integrated Innovative Technology
-              </option>
-              <option value="LibArt">Liberal Arts</option>
-              <option value="Medicine">Medicine</option>
-              <option value="Nursing">Nursing</option>
-              <option value="Science">Science</option>
+              <option value="โรงอาหาร A">โรงอาหาร A</option>
+              <option value="โรงอาหาร C">โรงอาหาร C</option>
+              <option value="โรงอาหาร J">โรงอาหาร J</option>
+              <option value="โรงอาหารพระเทพ">โรงอาหารพระเทพ</option>
+              <option value="ตึก 12 ชั้น">ตึก 12 ชั้น</option>
+              <option value="ห้องสมุด">ห้องสมุด</option>
+              <option value="ตึกคณะบริหาร">ตึกคณะบริหาร</option>
+              <option value="ตึกภาคอุตสาหการ">ตึกภาคอุตสาหการ</option>
             </select>
           </div>
           <div className="mb-4">
@@ -173,23 +165,14 @@ function Upload() {
               <option value="" disabled>
                 Select your subLocation
               </option>
-              <option value="Architecture">Architecture, Art and Design</option>
-              <option value="AgriTech">Agricultural and Technology</option>
-              <option value="Business">Business</option>
-              <option value="Dentistry">Dentistry</option>
-              <option value="Engineering">Engineering</option>
-              <option value="FoodIndus">Food Industry</option>
-              <option value="InformTech">Information Technology</option>
-              <option value="IndusEdu">
-                Industrial Education and Technology
-              </option>
-              <option value="IntInnTech">
-                Integrated Innovative Technology
-              </option>
-              <option value="LibArt">Liberal Arts</option>
-              <option value="Medicine">Medicine</option>
-              <option value="Nursing">Nursing</option>
-              <option value="Science">Science</option>
+              <option value="โรงอาหาร A">โรงอาหาร A</option>
+              <option value="โรงอาหาร C">โรงอาหาร C</option>
+              <option value="โรงอาหาร J">โรงอาหาร J</option>
+              <option value="โรงอาหารพระเทพ">โรงอาหารพระเทพ</option>
+              <option value="ตึก 12 ชั้น">ตึก 12 ชั้น</option>
+              <option value="ห้องสมุด">ห้องสมุด</option>
+              <option value="ตึกคณะบริหาร">ตึกคณะบริหาร</option>
+              <option value="ตึกภาคอุตสาหการ">ตึกภาคอุตสาหการ</option>
             </select>
           </div>
 

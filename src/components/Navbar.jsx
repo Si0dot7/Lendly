@@ -23,7 +23,7 @@ function Navbar() {
           </span>
         </Link>
         <Link
-          to="/feed"
+          to="/library"
           className={`navbar-logo ${activePage === '/feed' ? 'bg-blue-500' : ''}`}
         >
           <span className="flex flex-col items-center justify-center space-y-2 w-20 h-24">

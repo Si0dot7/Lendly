@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar';
 import { Link, NavLink } from 'react-router-dom';
 import { useState,useEffect } from 'react';
 import axios from 'axios';
+import {Autoplay} from 'swiper/modules'
 
 
 function Home() {
@@ -34,7 +35,7 @@ function Home() {
   
 
   return (
-    <div className="flex flex-col min-h-screen p-4">
+    <div className="flex flex-col min-h-screen p-4 max-h-screen">
       <div className="flex-grow flex flex-col items-center">
         <div className="flex items-center justify-center gap-4 mb-6 sticky">
           <img src="/lendlylogo.svg" alt="Lendly Logo" className="w-12" />
@@ -83,7 +84,8 @@ function Home() {
               1024: { slidesPerView: 3 },
             }}
             loop={data.length>=2}
-            autoplay={{ delay: 3000 }}
+            autoplay={{ delay: 2000 }}
+            modules={[Autoplay]}
             className="w-full h-1/2"
           >
             {data.length > 0 ? (
