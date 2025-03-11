@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import Card from "../components/Card";
 import Navbar from '../components/Navbar';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { useState,useEffect } from 'react';
 import axios from 'axios';
 
@@ -17,7 +17,7 @@ function Home() {
         headers: { authtoken },
       });
       setData(getData.data);
-      console.log(getData.data);
+      console.log('data',getData.data);
       
     } catch (error) {
       console.error("Error loading data:", error);
@@ -26,6 +26,7 @@ function Home() {
 
   useEffect(() => {
     loadData();
+    
   }, []);
 
  
@@ -34,9 +35,7 @@ function Home() {
 
   return (
     <div className="flex flex-col min-h-screen p-4">
-      {/* Content Container */}
       <div className="flex-grow flex flex-col items-center">
-        {/* Header Section */}
         <div className="flex items-center justify-center gap-4 mb-6 sticky">
           <img src="/lendlylogo.svg" alt="Lendly Logo" className="w-12" />
           <form>
@@ -66,22 +65,26 @@ function Home() {
         </div>
 
         {/* Recommended Section */}
-        <div className="w-full">
+        <div className="lg:w-1/5 w-full sm:w-1/2">
           <div className="flex mx-auto justify-between">
             <h1 className="text-xl font-semibold mb-4">Recommended for You</h1>
-            <p>see all</p>
+            <button className="bg-blue-500 text-white w-12 h-9 rounded-lg cursor-pointer" >
+              <Link to='/upload'>
+              Add
+              </Link>
+            </button>
           </div>
           <Swiper
-            spaceBetween={20}
+            spaceBetween={10}
             slidesPerView={3}
             breakpoints={{
               640: { slidesPerView: 3 },
               768: { slidesPerView: 3 },
-              1024: { slidesPerView: 4 },
+              1024: { slidesPerView: 3 },
             }}
-            loop={true}
+            loop={data.length>=2}
             autoplay={{ delay: 3000 }}
-            className="w-full"
+            className="w-full h-1/2"
           >
             {data.length > 0 ? (
               data.map((card) => (
@@ -91,10 +94,9 @@ function Home() {
                       id={card._id}
                       title={card.title}
                       description={card.description}
-                      file={import.meta.env.VITE_API_URI + "/uploads/" + card.file} // Ensure correct file path
-                      genre={card.genre}
-                      lenderName={card.lenderName}
-                      status={card.status}
+                      file={card.image} 
+                      lenderName={card.mainLocation}
+                      status={card.subLocation}
                       price={card.price}
                     />
                   </div>

@@ -41,6 +41,7 @@ function Login() {
         })
       );
       localStorage.setItem("token", loginserver.data.token);
+      localStorage.setItem("email", loginserver.data.payload.user.email);
       navigate('/Home')
       
     } catch (error) {

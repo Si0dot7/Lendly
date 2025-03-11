@@ -22,6 +22,7 @@ import Default from "./pages/Default";
 import ProfileReport from "./pages/ProfileFolder/ProfileReport";
 import Navbar from "./components/Navbar";
 import User from "./pages/user/User";
+import Upload from "./pages/Upload";
 
 function App() {
   const dispatch = useDispatch();
@@ -64,8 +65,10 @@ function App() {
           })
         );
       }
+      console.log('userdata',userData);
     };
-
+    
+    
     fetchAndDispatchUser();
   }, [dispatch, idToken]);
 
@@ -75,18 +78,24 @@ function App() {
         {/* Public Routes */}
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/" element={<Default />} />
+        {/* <Route path="/" element={<Default />} /> */}
         <Route path="/help" element={<Help />} />
         <Route path="/help-page-1" element={<HelpPage1 />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/loading" element={<Loading />} />
+        <Route path="/" element={<Loading />} />
         <Route path="/navbar" element={<Navbar />} />
-
+    
+        
         
         {/* Private Routes (Require Authentication) */}
         <Route path="/home" element={
           <User>
             <Home />
+          </User>
+        } />
+        <Route path="/upload" element={
+          <User>
+            <Upload/>
           </User>
         } />
         <Route path="/report" element={
@@ -99,7 +108,7 @@ function App() {
             <Profile />
           </User>
         } />
-        <Route path="/profile-report" element={
+        <Route path="/profilereport" element={
           <User>
             <ProfileReport />
           </User>
