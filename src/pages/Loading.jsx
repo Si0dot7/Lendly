@@ -6,11 +6,11 @@ function Loading() {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col items-center h-screen p-4 ">
+    <div className="flex flex-col items-center h-screen px-4 py-2 ">
       <img
         src="/newShirt.jpg"
         alt="loadingPic"
-        className="w-auto h-full m-12 flex justify-center items-center shadow-2xl"
+        className="w-auto h-full m-12 flex justify-center items-center shadow-2xl mt-5"
       />
 
       <div className="font-[Inter] font-semibold text-3xl sm:text-[38px] text-center m-4 mt-5">
