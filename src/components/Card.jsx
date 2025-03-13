@@ -27,7 +27,7 @@ function Card({ id, title, description, file, lenderName, status,price }) {
 
   return (
     <div
-      className="max-w-sm rounded overflow-hidden shadow-lg cursor-pointer hover:shadow-xl transition h-[310px] lg:h-[330px] "
+      className="max-w-sm rounded overflow-hidden shadow-lg cursor-pointer hover:shadow-xl transition h-[210px] lg:h-[270px] "
       onClick={handleClick} 
     >
       <div className="aspect-w-1 aspect-h-1 overflow-hidden">
@@ -41,7 +41,7 @@ function Card({ id, title, description, file, lenderName, status,price }) {
         <div className="font-semibold text-[15px] mb-2 text-center">{title}</div>
         <p className="text-gray-700 text-base">{description}...</p>
         
-        <section className='w-full fixed  bottom-0'>
+        <section className='w-full'>
         <div className="flex text-sm text-gray-500 ">
           {/* <p>Location: {lenderName}</p> */}
           <p className='text-green-900 font-semibold'>Price: <span className='text-green-900 font-semibold'>{price}</span> Baht/day</p>

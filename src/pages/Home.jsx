@@ -66,7 +66,7 @@ function Home() {
         </div>
 
         {/* Recommended Section */}
-        <div className="lg:w-1/5 w-full sm:w-1/2">
+        <div className="lg:w-1/4 w-full sm:w-1/2">
           <div className="flex mx-auto justify-between">
             <h1 className="text-xl font-semibold mb-4">Recommended for You</h1>
             <button className="bg-blue-500 text-white w-12 h-9 rounded-lg cursor-pointer" >
