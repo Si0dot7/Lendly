@@ -1,6 +1,9 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import React from "react";
+import Card from "../components/Card";
+import axios from "axios";
+import MyLent from "../components/MyLent";
 
 function Library() {
   const [currentPage, setCurrentPage] = useState("saved"); // default to "saved"
@@ -20,29 +23,35 @@ function Library() {
           <div className="flex justify-between w-full max-w-md bg-gray-100 p-2 rounded-xl shadow-md">
             <button
               onClick={() => handlePageChange("saved")}
-              className={`px-4 py-2 rounded-lg ${currentPage === "saved" ? "bg-blue-500 text-white" : "bg-white"
-                } hover:bg-blue-200`}
+              className={`px-4 py-2 rounded-lg ${
+                currentPage === "saved" ? "bg-blue-500 text-white" : "bg-white"
+              } hover:bg-blue-200`}
             >
               Saved List
             </button>
             <button
               onClick={() => handlePageChange("borrow")}
-              className={`px-4 py-2 rounded-lg ${currentPage === "borrow" ? "bg-blue-500 text-white" : "bg-white"
-                } hover:bg-blue-200`}
+              className={`px-4 py-2 rounded-lg ${
+                currentPage === "borrow" ? "bg-blue-500 text-white" : "bg-white"
+              } hover:bg-blue-200`}
             >
               On Borrow
             </button>
             <button
               onClick={() => handlePageChange("returned")}
-              className={`px-4 py-2 rounded-lg ${currentPage === "returned" ? "bg-blue-500 text-white" : "bg-white"
-                } hover:bg-blue-200`}
+              className={`px-4 py-2 rounded-lg ${
+                currentPage === "returned"
+                  ? "bg-blue-500 text-white"
+                  : "bg-white"
+              } hover:bg-blue-200`}
             >
               Returned
             </button>
             <button
               onClick={() => handlePageChange("lent")}
-              className={`px-4 py-2 rounded-lg ${currentPage === "lent" ? "bg-blue-500 text-white" : "bg-white"
-                } hover:bg-blue-200`}
+              className={`px-4 py-2 rounded-lg ${
+                currentPage === "lent" ? "bg-blue-500 text-white" : "bg-white"
+              } hover:bg-blue-200`}
             >
               My Lent
             </button>
@@ -50,12 +59,11 @@ function Library() {
 
           {/* Content Area */}
           <div className="mt-4 w-full max-w-md">
-            {currentPage === "saved" && <Saved />}
+            {currentPage === "saved" && <Saved/>}
             {currentPage === "borrow" && <OnBorrow />}
             {currentPage === "returned" && <Returned />}
             {currentPage === "lent" && <MyLent />}
           </div>
-          
         </div>
       </div>
       <Navbar />
@@ -92,13 +100,41 @@ function Returned() {
   );
 }
 
-function MyLent() {
-  return (
-    <div>
-      <h1>My Lent</h1>
-      <p>📤 These are the items you lent out.</p>
-    </div>
-  );
-}
+// async function MyLent() {
+//   const [haveToken, setHaveToken] = useState(true);
+//   const [data, setData] = useState([]);
+//   try {
+//     const getData = await axios.get(import.meta.env.VITE_API_URI + "/product", {
+//       headers: { authtoken },
+//     });
+//     if (getData.data.token == localStorage.getItem("token")) {
+//       setData(getData.data);
+//       console.log("success filter data", getData.data);
+//     }
+//     setHaveToken(true)
+//   } catch (error) {
+//     console.log('error from filter data',error);
+    
+//   }
+//   return (
+//     <div>
+//       {haveToken ? (
+//         <div className="relative w-full aspect-w-1 aspect-h-1">
+//           <Card
+//             id={data._id}
+//             title={data.title}
+//             description={data.description}
+//             file={data.image}
+//             lenderName={data.mainLocation}
+//             status={data.subLocation}
+//             price={data.price}
+//           />
+//         </div>
+//       ) : (
+//         <p>No Product Upload</p>
+//       )}
+//     </div>
+//   );
+// }
 
 export default Library;

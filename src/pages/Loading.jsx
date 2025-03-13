@@ -10,7 +10,7 @@ function Loading() {
       <img
         src="/newShirt.jpg"
         alt="loadingPic"
-        className="w-auto h-full m-12 flex justify-center items-center shadow-2xl mt-5"
+        className="w-auto lg:w-[400px] h-full m-12 flex justify-center items-center shadow-2xl mt-5"
       />
 
       <div className="font-[Inter] font-semibold text-3xl sm:text-[38px] text-center m-4 mt-5">

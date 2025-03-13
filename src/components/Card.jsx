@@ -39,7 +39,7 @@ function Card({ id, title, description, file, lenderName, status,price }) {
       </div>
       <div className="px-2 py-2">
         <div className="font-semibold text-[15px] mb-2 text-center">{title}</div>
-        <p className="text-gray-700 text-base">{description.slice(0, 100)}...</p>
+        <p className="text-gray-700 text-base">{description}...</p>
         
         <section className='w-full fixed  bottom-0'>
         <div className="flex text-sm text-gray-500 ">

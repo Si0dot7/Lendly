@@ -15,8 +15,10 @@ function Upload() {
       image: "",
       mainLocation: "",
       subLocation: "",
+      token: "",
     },
   ]);
+
 
   const handleChange = (e) => {
     setData({
@@ -43,7 +45,10 @@ function Upload() {
       );
 
       setData((prevData) => {
-        const newData = { ...prevData, image: pushImage.data.imageUrl };
+        const newData = { ...prevData,
+           image: pushImage.data.imageUrl,
+           token:localStorage.getItem('token') 
+          };
 
         axios
           .post(import.meta.env.VITE_API_URI + "/product", newData, {
@@ -57,6 +62,8 @@ function Upload() {
         text: "Add Product Successfully",
         icon: "success",
       });
+      console.log(data);
+      
       // await new Promise(resolve => setTimeout(resolve, 1000));
       navigate("/home");
     } catch (error) {
