@@ -15,7 +15,7 @@ function Upload() {
       image: "",
       mainLocation: "",
       subLocation: "",
-      token: "",
+      email: "",
     },
   ]);
 
@@ -47,7 +47,7 @@ function Upload() {
       setData((prevData) => {
         const newData = { ...prevData,
            image: pushImage.data.imageUrl,
-           token:localStorage.getItem('token') 
+           email:localStorage.getItem('email') 
           };
 
         axios

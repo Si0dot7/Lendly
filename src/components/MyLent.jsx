@@ -9,6 +9,7 @@ const MyLent = () => {
 
   const fetchData = async () => {
     const authtoken = localStorage.getItem("token");
+    const email = localStorage.getItem("email");
     try {
       if (!authtoken) {
         setHaveToken(false);
@@ -18,15 +19,14 @@ const MyLent = () => {
       const res = await axios.get(import.meta.env.VITE_API_URI + "/product", {
         headers: { authtoken },
       });
-      console.log('res.data.token',String(res.data.token).trim());
-      console.log('authtoken',String(authtoken).trim());
+      
       console.log(res.data);
       
       
       if (res.data) {
-        const filterData = res.data.filter((item)=>item.token === authtoken)
+        const filterData = res.data.filter((item)=>item.email === email)
         setData(filterData);
-        console.log("filter data successfully");
+        console.log("filter data successfully", filterData);
       }
     } catch (error) {
       console.log("filter data error", error);
@@ -38,11 +38,12 @@ const MyLent = () => {
   return (
     <div>
       {haveToken ? (
-        <div className="lg:w-1/5 w-full sm:w-1/2">
-        <div className="relative w-1/2 lg:w-full aspect-w-1 aspect-h-1">
+        <div className="lg:w-2/5 w-full sm:w-1/2">
+        <div className="relative w-1/3 lg:w-full  h-1/2 aspect-w-1 aspect-h-1">
           {data.length > 0 ? (
             data.map((item) => (
-              <Card
+              <div>
+                <Card
                 key={item._id}
                 id={item._id}
                 title={item.title}
@@ -52,6 +53,8 @@ const MyLent = () => {
                 status={item.subLocation}
                 price={item.price}
               />
+              <p>sdfsdf</p>
+                </div>
             ))
           ) : (
             <p>No Products Found</p>
