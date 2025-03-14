@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+
 const Register = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const navigate = useNavigate();
@@ -35,7 +37,11 @@ const Register = () => {
           import.meta.env.VITE_API_URI + "/register",
           value
         );
-        alert(register.data);
+        Swal.fire({
+                title: "Successfully!!!",
+                text: "Add Product Successfully",
+                icon: "success",
+              });    
         navigate("/login");
       } catch (error) {
         console.log("register error: " + error);
