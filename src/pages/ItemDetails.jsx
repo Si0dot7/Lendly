@@ -39,14 +39,14 @@ function ItemDetails() {
                 <h1 className="text-xl font-bold mb-4 items-center">{title}</h1>
                 <div className="flex mx-4">
                   <h1
-                    className="text-xl font-bold mb-4 items-center"
+                    className="text-green-700 text-xl font-bold mb-4 items-center"
                     id="price"
                   >
-                    {price}
+                    {price}  <span className="text-gray-700">Baht per day</span>
                   </h1>
-                  <h1 className="text-xl font-bold mb-4 items-center">
-                    &nbsp;Baht <span className="text-gray-500">per day</span>
-                  </h1>
+                  {/* <h1 className="text-xl font-bold mb-4 items-center">
+                    
+                  </h1> */}
                 </div>
               </div>
 

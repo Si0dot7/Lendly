@@ -3,6 +3,7 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
 
+
 function Upload() {
   const authtoken = localStorage.getItem("token");
   const [image, setImage] = useState("");
@@ -18,7 +19,6 @@ function Upload() {
       email: "",
     },
   ]);
-
 
   const handleChange = (e) => {
     setData({
@@ -61,9 +61,7 @@ function Upload() {
         title: "Successfully!!!",
         text: "Add Product Successfully",
         icon: "success",
-      });
-      console.log(data);
-      
+      });    
       // await new Promise(resolve => setTimeout(resolve, 1000));
       navigate("/home");
     } catch (error) {
@@ -80,9 +78,18 @@ function Upload() {
         </h1>
       </div>
       <div className="w-full max-w-md p-8 rounded-lg">
+        <div className="flex">
+        
+        <button
+          onClick={() => window.history.back()}
+          className="bg-gray-300 text-white py-2 px-3 rounded-lg mb-4 hover:bg-gray-500 cursor-pointer mr-3 lg:mr-3"
+        >
+          <img src="/leftarrow.svg" alt="backarrow" />
+        </button>
         <h2 className="text-2xl font-bold text-center mb-6">
           Upload Your Product
         </h2>
+        </div>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label className="block text-sm font-medium text-gray-700">
@@ -143,6 +150,7 @@ function Upload() {
               name="mainLocation"
               onChange={handleChange}
               required
+              
             >
               {/* ใส่ให้แหน่คับ */}
               <option value="" disabled>

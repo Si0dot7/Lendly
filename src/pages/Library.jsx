@@ -6,7 +6,7 @@ import axios from "axios";
 import MyLent from "../components/MyLent";
 
 function Library() {
-  const [currentPage, setCurrentPage] = useState("saved"); // default to "saved"
+  const [currentPage, setCurrentPage] = useState("fav"); // default to "saved"
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
@@ -24,10 +24,10 @@ function Library() {
             <button
               onClick={() => handlePageChange("saved")}
               className={`px-4 py-2 rounded-lg ${
-                currentPage === "saved" ? "bg-blue-500 text-white" : "bg-white"
+                currentPage === "fav" ? "bg-blue-500 text-white" : "bg-white"
               } hover:bg-blue-200`}
             >
-              Saved List
+              Favorite List
             </button>
             <button
               onClick={() => handlePageChange("borrow")}
@@ -59,7 +59,7 @@ function Library() {
 
           {/* Content Area */}
           <div className="mt-4 w-full max-w-md">
-            {currentPage === "saved" && <Saved/>}
+            {currentPage === "fav" && <Favorite/>}
             {currentPage === "borrow" && <OnBorrow />}
             {currentPage === "returned" && <Returned />}
             {currentPage === "lent" && <MyLent />}
@@ -72,11 +72,11 @@ function Library() {
 }
 
 /* Individual Components */
-function Saved() {
+function Favorite() {
   return (
     <div className="flex flex-col items-center">
-      <h1>Saved List</h1>
-      <p>Here are the items you've saved for later.</p>
+      <h1>Favorite List</h1>
+      <p>Here are the items you've Favorite for later.</p>
       <img src="/Nologo.svg" alt="" />
     </div>
   );

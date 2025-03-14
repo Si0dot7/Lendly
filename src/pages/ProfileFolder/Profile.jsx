@@ -8,6 +8,11 @@ function Profile() {
   const [isLogout, setIsLogout] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [data,setData] = useState([])
+
+  const fetchData=async()=>{
+    
+  }
 
   const handleLogout = () => {
     dispatch(logout());
