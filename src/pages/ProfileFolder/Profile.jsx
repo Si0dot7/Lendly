@@ -3,16 +3,17 @@ import Navbar from "../../components/Navbar";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { logout } from "../../store/UserSlice";
+import axios from "axios";
+import { useSelector } from "react-redux";
 
 function Profile() {
   const [isLogout, setIsLogout] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [data,setData] = useState([])
-
-  const fetchData=async()=>{
-    
-  }
+  const user = useSelector((state)=>state.user)
+  console.log(user.user.fullName);
+  
+ 
 
   const handleLogout = () => {
     dispatch(logout());
@@ -40,8 +41,8 @@ function Profile() {
             </div>
           </div>
           <div className="w-[213px] h-[34px] flex justify-center flex-col items-center">
-            <h1 className="text-[20px]">Meow Meow</h1>
-            <p className="text-[8px]">meow@gmail.com</p>
+            <h1 className="text-[20px]">{user.user.fullName}</h1>
+            <p className="text-[8px]">{user.user.email}</p>
           </div>
           {/* menu bar */}
           <div className="flex flex-col w-full px-[40px]">
