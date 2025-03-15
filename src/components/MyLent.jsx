@@ -4,11 +4,13 @@ import { useState } from "react";
 import Card from "./Card";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
+import { useNavigate } from "react-router-dom";
 
 const MyLent = () => {
   const [haveToken, setHaveToken] = useState(true);
   const [data, setData] = useState([]);
   const authtoken = localStorage.getItem("token");
+  const navigate = useNavigate();
   const fetchData = async () => {
     const email = localStorage.getItem("email");
     try {
@@ -41,12 +43,13 @@ const MyLent = () => {
           headers: { authtoken },
         }
       );
-      
-      location.reload()
+
+      location.reload();
     } catch (error) {
       console.log("delete error", error);
     }
   };
+
 
   useEffect(() => {
     fetchData();
@@ -78,17 +81,35 @@ const MyLent = () => {
                         id={item._id}
                         title={item.title}
                         description={item.description}
-                        file={item.image}
-                        lenderName={item.mainLocation}
-                        status={item.subLocation}
+                        image={item.image}
+                        mainLocation={item.mainLocation}
+                        subLocation={item.subLocation}
                         price={item.price}
+                        status={item.status}
                       />
-                      <button
-                        className="border bg-red-500 text-white w-full p-0.5 rounded-b-md cursor-pointer hover:bg-red-700"
-                        onClick={() => deleteItem(item._id)}
-                      >
-                        Delete
-                      </button>
+                      {item.status === "borrowed" ? (
+                        <div>
+                          <button
+                            className="border bg-blue-500 text-white w-full p-0.5 cursor-pointer hover:bg-blue-700"
+                            onClick={() => navigate(`/scanner/${item._id}`,{state:{item}})}
+                          >
+                            Scanner
+                          </button>
+                          <button
+                            className="border bg-red-500 text-white w-full p-0.5 rounded-b-md cursor-pointer hover:bg-red-700"
+                            onClick={() => deleteItem(item._id)}
+                          >
+                            Delete
+                          </button>
+                        </div>
+                      ) : (
+                        <button
+                          className="border bg-red-500 text-white w-full p-0.5 rounded-b-md cursor-pointer hover:bg-red-700"
+                          onClick={() => deleteItem(item._id)}
+                        >
+                          Delete
+                        </button>
+                      )}
                     </div>
                   </SwiperSlide>
                 ))

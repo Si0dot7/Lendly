@@ -96,10 +96,14 @@ function Home() {
                       id={card._id}
                       title={card.title}
                       description={card.description}
-                      file={card.image} 
-                      lenderName={card.mainLocation}
-                      status={card.subLocation}
+                      image={card.image} 
+                      mainLocation={card.mainLocation}
+                      subLocation={card.subLocation}
                       price={card.price}
+                      email={card.email}
+                      borrowEmail={card.borrowEmail}
+                      status={card.status}
+                      clickable={true}
                     />
                   </div>
                 </SwiperSlide>

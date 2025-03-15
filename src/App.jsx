@@ -23,6 +23,8 @@ import ProfileReport from "./pages/ProfileFolder/ProfileReport";
 import Navbar from "./components/Navbar";
 import User from "./pages/user/User";
 import Upload from "./pages/Upload";
+import QRCode from "./pages/QRCode";
+import Scanner from "./pages/Scanner";
 
 function App() {
   const dispatch = useDispatch();
@@ -127,6 +129,16 @@ function App() {
         <Route path="/item/:id" element={
           <User>
             <ItemDetails />
+          </User>
+        } />
+        <Route path="/qrcode/:id" element={
+          <User>
+            <QRCode/>
+          </User>
+        } />
+        <Route path="/scanner/:id" element={
+          <User>
+            <Scanner/>
           </User>
         } />
       </Routes>

@@ -1,9 +1,8 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import React from "react";
-import Card from "../components/Card";
-import axios from "axios";
 import MyLent from "../components/MyLent";
+import OnBorrow from "../components/onBorrow";
 
 function Library() {
   const [currentPage, setCurrentPage] = useState("fav"); // default to "saved"
@@ -60,7 +59,7 @@ function Library() {
           {/* Content Area */}
           <div className="mt-4 w-full max-w-md">
             {currentPage === "fav" && <Favorite/>}
-            {currentPage === "borrow" && <OnBorrow />}
+            {currentPage === "borrow" && <OnBorrow/> }
             {currentPage === "returned" && <Returned />}
             {currentPage === "lent" && <MyLent />}
           </div>
@@ -82,14 +81,14 @@ function Favorite() {
   );
 }
 
-function OnBorrow() {
-  return (
-    <div>
-      <h1>On Borrow</h1>
-      <p>📖 These are the items you borrowed.</p>
-    </div>
-  );
-}
+// function OnBorrow() {
+//   return (
+//     <div>
+//       <h1>On Borrow</h1>
+//       <p>📖 These are the items you borrowed.</p>
+//     </div>
+//   );
+// }
 
 function Returned() {
   return (
