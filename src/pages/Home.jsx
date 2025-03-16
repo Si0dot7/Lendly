@@ -103,6 +103,8 @@ function Home() {
                       email={card.email}
                       borrowEmail={card.borrowEmail}
                       status={card.status}
+                      favorite={card.favorite}
+                      favoriteEmail={card.favoriteEmail}
                       clickable={true}
                     />
                   </div>

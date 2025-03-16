@@ -11,6 +11,8 @@ function Card({
   email,
   borrowEmail,
   status,
+  favorite,
+  favoriteEmail,
   clickable = true,
 }) {
   const navigate = useNavigate();
@@ -29,6 +31,8 @@ function Card({
           email,
           borrowEmail,
           status,
+          favorite,
+          favoriteEmail,
         },
       });
     }

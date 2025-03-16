@@ -2,10 +2,12 @@ import React, { useEffect, useRef, useState } from "react";
 import { Html5Qrcode } from "html5-qrcode";
 import Swal from "sweetalert2";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const QRScanner = ({ email, title, image, price, borrowEmail }) => {
   const scannerRef = useRef(null);
   const authtoken = localStorage.getItem('token')
+  const navigate = useNavigate()
 
     const deleteItem=async(id)=>{
        const res = await axios.delete(
@@ -34,7 +36,7 @@ const QRScanner = ({ email, title, image, price, borrowEmail }) => {
               try {
                 const getdata = JSON.parse(decodedText);
                 // console.log("สแกนสำเร็จ: ", JSON.stringify(getdata));
-                html5QrCode.stop();
+                // html5QrCode.stop();
                 if (
                   getdata.email === email &&
                   getdata.image === image &&
@@ -50,7 +52,7 @@ const QRScanner = ({ email, title, image, price, borrowEmail }) => {
                           text: "Return Product Successfully",
                           icon: "success",
                         });
-                        
+                    navigate('/home')
                         
                 } else {
                     Swal.fire({
@@ -58,6 +60,7 @@ const QRScanner = ({ email, title, image, price, borrowEmail }) => {
                         text: "Please Check Your QR Code",
                         icon: "error",
                       });
+                      navigate('/home')
                 }
               } catch (error) {
                 console.error("QR Code ไม่ถูกต้อง:", error);
