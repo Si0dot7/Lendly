@@ -2,7 +2,7 @@ import { useState } from "react";
 import Navbar from "../components/Navbar";
 import React from "react";
 import MyLent from "../components/MyLent";
-import OnBorrow from "../components/onBorrow";
+import OnBorrow from "../components/OnBorrow";
 
 function Library() {
   const [currentPage, setCurrentPage] = useState("fav"); // default to "saved"
